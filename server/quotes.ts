@@ -1,0 +1,77 @@
+export interface DailyQuote {
+  text: string;
+  author: string;
+}
+
+const BASE_QUOTES: DailyQuote[] = [
+  { text: "You are allowed to be both a masterpiece and a work in progress at the exact same time.", author: "Sophia Bush" },
+  { text: "Keep a little diary of small joys; one day you will look back and realize they were the big things.", author: "dear, me." },
+  { text: "Romanticize your quiet mornings, your strawberry lattes, and the person you are becoming.", author: "dear, me." },
+  { text: "Nothing blooms all year round, so give yourself grace in every quiet season.", author: "dear, me." },
+  { text: "Write to your future self with the kindness you wish someone offered you yesterday.", author: "dear, me." },
+  { text: "The softest version of you is still remarkably resilient.", author: "dear, me." },
+  { text: "Let your memories live somewhere warm, safe, and unapologetically pink.", author: "dear, me." },
+  { text: "Every ordinary Tuesday holds at least one tiny photograph worth keeping forever.", author: "dear, me." },
+  { text: "Protect your peace like a secret locked behind a heart-shaped padlock.", author: "dear, me." },
+  { text: "You do not have to rush to become who you are already growing into.", author: "dear, me." },
+  { text: "Some days are for chasing big dreams, and some days are for glitter lip gloss and rest.", author: "dear, me." },
+  { text: "Be gentle with the girl you used to be; she got you all the way here.", author: "dear, me." },
+  { text: "Your voice matters, even when it is only whispered into a late-night voice diary.", author: "dear, me." },
+  { text: "Good things take time, like film developing in a darkroom.", author: "dear, me." },
+  { text: "Keep the friends who send you silly selfies and check if you got home safe.", author: "dear, me." },
+  { text: "There is magic in noticing the sunlight hitting your bedroom wall at 4 p.m.", author: "dear, me." },
+  { text: "Your story deserves pretty stationery and careful ink.", author: "dear, me." },
+  { text: "Joy is not frivolous; joy is how your heart remembers it is alive.", author: "dear, me." },
+  { text: "Never apologize for loving cute things, deep feelings, and nostalgic playlists.", author: "dear, me." },
+  { text: "A year from now, you will be so glad you kept going today.", author: "Karen Lamb" },
+  { text: "Speak to yourself like someone you adore.", author: "Brené Brown" },
+  { text: "She remembered who she was and the game changed.", author: "Lalah Delia" },
+  { text: "Collect moments, not things—unless those things are polaroids and cassette tapes.", author: "dear, me." },
+  { text: "May your heart stay curious, your boundaries stay firm, and your laughter stay loud.", author: "dear, me." },
+  { text: "You are the author of your own cozy little universe.", author: "dear, me." },
+  { text: "Slow down long enough to taste your morning coffee and feel proud of yourself.", author: "dear, me." },
+  { text: "The best chapters often start right after you thought you were stuck.", author: "dear, me." },
+  { text: "Wear the bow, take the photo, send the sweet text.", author: "dear, me." },
+  { text: "Your sensitivity is a lens that notices beauty other people walk right past.", author: "dear, me." },
+  { text: "Trust the quiet timing of your own life.", author: "dear, me." },
+  { text: "Make room in your calendar for daydreaming and slow walks.", author: "dear, me." },
+  { text: "Everything you pour love into eventually finds a way to shine back at you.", author: "dear, me." },
+  { text: "You are allowed to outgrow versions of yourself that no longer fit.", author: "dear, me." },
+  { text: "Hold onto the songs that made you feel invincible at seventeen.", author: "dear, me." },
+  { text: "Little acts of self-care add up to a whole life that feels like home.", author: "dear, me." },
+  { text: "Let today be soft, unhurried, and completely yours.", author: "dear, me." },
+  { text: "Even a tiny spark is enough to light up an entire diary page.", author: "dear, me." },
+  { text: "The future version of you is cheering for every brave little step you take now.", author: "dear, me." },
+  { text: "Keep believing in sweet coincidences and handwritten letters.", author: "dear, me." },
+  { text: "Your heart knows how to heal when you give it warmth and patience.", author: "dear, me." },
+  { text: "Turn the volume up on what makes you feel most yourself.", author: "dear, me." },
+  { text: "There is no expiration date on starting fresh and choosing happiness.", author: "dear, me." },
+  { text: "You deserve friendships that feel like a warm hug and an inside joke.", author: "dear, me." },
+  { text: "Take a mental snapshot of this exact minute—you made it through.", author: "dear, me." },
+  { text: "Grace looks good on you, especially on the messy days.", author: "dear, me." },
+  { text: "Not everything needs to be shared online to be deeply meaningful.", author: "dear, me." },
+  { text: "Keep your private magic sacred.", author: "dear, me." },
+  { text: "Celebrate small wins like they are front-page headlines.", author: "dear, me." },
+  { text: "Let curiosity lead you somewhere lovely this week.", author: "dear, me." },
+  { text: "You have survived 100% of your hardest days and still kept your sparkle.", author: "dear, me." },
+  { text: "Life gets sweeter the moment you stop comparing timelines.", author: "dear, me." },
+  { text: "Write down what you love today so you never forget who you are.", author: "dear, me." },
+  { text: "Always leave a little glitter and kindness wherever you go.", author: "dear, me." },
+  { text: "Tomorrow is an unopened envelope full of fresh possibilities.", author: "dear, me." },
+  { text: "You are enough, right here, right now, before anything else changes.", author: "dear, me." },
+  { text: "Notice three pink things today and let them make you smile.", author: "dear, me." },
+  { text: "Your dreams are not too whimsical; they are your compass.", author: "dear, me." },
+  { text: "Keep a corner of your world purely for joy and creativity.", author: "dear, me." },
+  { text: "Rest is part of the rhythm, not an interruption from it.", author: "dear, me." },
+  { text: "Every memory you save today becomes a gift to your future self.", author: "dear, me." },
+];
+
+export function getQuoteForDayIndex(dayOfYear: number): { index: number; text: string; author: string } {
+  const safeDay = Math.max(0, Math.floor(dayOfYear));
+  const idx = safeDay % BASE_QUOTES.length;
+  return {
+    index: safeDay % 365,
+    text: BASE_QUOTES[idx].text,
+    author: BASE_QUOTES[idx].author,
+  };
+}

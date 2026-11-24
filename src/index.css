@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-pixel: 'Pixelify Sans', monospace;
+  --font-vt: 'VT323', monospace;
+  --font-pixel-micro: 'Press Start 2P', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  --color-hot-pink: #F20B83;
+  --color-bubblegum: #FF69AD;
+  --color-light-pink: #FFB6D5;
+  --color-baby-pink: #F8D8E6;
+  --color-pale-blush: #FFF0F5;
+  --color-dusty-rose: #C76B94;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FFF0F5;
+  color: #3D1329;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Y2K Vertical Pink Stripes */
+.y2k-stripes {
+  background-color: #FFF0F5;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #FFF0F5 0px,
+    #FFF0F5 26px,
+    #FCE2EE 26px,
+    #FCE2EE 52px
+  );
+}
+
+/* Subtle Y2K Gingham */
+.y2k-gingham {
+  background-color: #FFF0F5;
+  background-image:
+    linear-gradient(90deg, rgba(255, 182, 213, 0.22) 50%, transparent 50%),
+    linear-gradient(rgba(255, 182, 213, 0.22) 50%, transparent 50%);
+  background-size: 28px 28px;
+}
+
+/* Glossy Pink Bar / Header */
+.glossy-pink-bar {
+  background: linear-gradient(180deg, #FF99C8 0%, #FF69AD 48%, #F20B83 52%, #FF4FA3 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 3px 10px rgba(242, 11, 131, 0.22);
+}
+
+/* Glossy Pink Button */
+.glossy-btn {
+  background: linear-gradient(180deg, #FF8FC3 0%, #FF4FA3 50%, #E00877 54%, #F20B83 100%);
+  border: 1.5px solid #B5055E;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    0 3px 8px rgba(242, 11, 131, 0.28);
+  color: #FFFFFF;
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), filter 0.16s ease, box-shadow 0.16s ease;
+}
+
+.glossy-btn:hover:not(:disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    0 5px 14px rgba(242, 11, 131, 0.35);
+}
+
+.glossy-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Glossy Chrome / Pearl Button */
+.chrome-btn {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F3EBF0 48%, #E4D7DF 52%, #FAF5F8 100%);
+  border: 1.5px solid #C76B94;
+  box-shadow:
+    inset 0 1px 0 #FFFFFF,
+    0 2px 6px rgba(199, 107, 148, 0.18);
+  color: #7D1B4D;
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.16s ease;
+}
+
+.chrome-btn:hover:not(:disabled) {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF0F5 50%, #F8D8E6 54%, #FFFFFF 100%);
+  transform: translateY(-1px);
+}
+
+/* Pearl Bead Border Frame */
+.pearl-frame {
+  position: relative;
+  background: #FFFFFF;
+  border: 2px solid #FFB6D5;
+  box-shadow:
+    0 0 0 3px #FFF8FB,
+    0 0 0 5px #FFB6D5,
+    0 8px 22px rgba(242, 11, 131, 0.12);
+}
+
+/* Dotted Retro Container */
+.retro-dotted-box {
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px dashed #FF69AD;
+  box-shadow: 0 4px 14px rgba(242, 11, 131, 0.08);
+}
+
+/* Retro Chrome Window Header */
+.safari-chrome {
+  background: linear-gradient(180deg, #F5F5F7 0%, #DFDFE4 49%, #CFCFD6 51%, #E7E7EC 100%);
+  border-bottom: 1px solid #B5B5BE;
+}
+
+/* Filmstrip Sprocket Strip */
+.filmstrip-holes {
+  background-image: radial-gradient(circle, #FFF0F5 4px, transparent 4.5px);
+  background-size: 18px 16px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+/* Retro Chat Bubble Tails */
+.chat-bubble-them {
+  position: relative;
+  background: #FFFFFF;
+  border: 2px solid #FF69AD;
+  box-shadow: 2px 2px 0 #FFB6D5;
+}
+
+.chat-bubble-me {
+  position: relative;
+  background: linear-gradient(180deg, #FF7BB9 0%, #F20B83 100%);
+  border: 2px solid #B80662;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 0 #FFB6D5;
+}
+
+/* Subtle Floating Sparkle Animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.45; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.animate-twinkle {
+  animation: twinkle 2.8s ease-in-out infinite;
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: gentle-float 3.6s ease-in-out infinite;
+}
+
+/* Tabular Numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF0F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF69AD;
+  border-radius: 9999px;
+  border: 2px solid #FFF0F5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F20B83;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-twinkle,
+  .animate-float {
+    animation: none !important;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
